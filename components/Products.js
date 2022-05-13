@@ -1,9 +1,21 @@
-import React from 'react'
+import React,{useEffect} from 'react'
 import {Box,Grid,Center,Heading,Text} from '@chakra-ui/react'
 import { Image } from '@chakra-ui/react'
-function Products({data}) {
-    console.log(data);
-  return (
+import {useSelector, useDispatch} from 'react-redux'
+import {getProduct} from '../store/actions'
+import axios from 'axios'
+
+function Products() {
+    const data = useSelector((state)=>state.data);
+    const dispatch =useDispatch();
+    useEffect(() => {
+      dispatch(getProduct(axios))
+    }, [])
+
+    
+
+
+    return (
 
     
 <Grid templateColumns={{md:'repeat(4, 1fr)',sm:'repeat(1, 1fr)' }} gap={6} ml={{md:"40px",sm:"30px",base:"10px"}} mr={{md:"40px",sm:"30px", base:"10px"}} mt={10} >
