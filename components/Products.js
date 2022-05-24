@@ -24,7 +24,7 @@ function Products() {
       data.allProducts.products && data.allProducts.products.map((product,i)=>
           <Box key={i} bg="blackAlpha.200" mt={1} border="1px" borderColor='blackAlpha.200' borderRadius='sm' >
             <Link href={product.id} textDecoration='none' _hover={{textDecoration:'none'}} >
-              <Center w="100%" h="40vh" bg="white" border='1px' borderColor='blue.600'>
+              <Center w="100%" h="40vh" bg="white">
               <Image src={product.image} width='125px' height='auto' />
               </Center>
               <Box>

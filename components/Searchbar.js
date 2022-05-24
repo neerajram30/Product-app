@@ -1,5 +1,4 @@
 import React,{useState,useEffect} from 'react'
-import axios from 'axios'
 import { Image } from '@chakra-ui/react'
 import { Link } from '@chakra-ui/react'
 
@@ -17,7 +16,7 @@ import {
   import {useDispatch} from 'react-redux'
 
 function Searchbar() {
-   const [products,setProducts] = useState([]);
+   
     const [text,setText] = useState([]);
     const [suggesions,setSuggessions] = useState([]);
     const data = useSelector((state)=>state);
@@ -73,11 +72,11 @@ function Searchbar() {
   {suggesions && 
   suggesions.map((suggesion, i)=>
   <Link href={suggesion.id} key={i} mt={4} >
-          <Flex  mt={2} w="90%">
+          <Flex  mt="4%" w="90%">
         <Center w={50} h={50}>
         <Image src={suggesion.image} mr={10} />
         </Center>    
-        <Flex ml={5}>{suggesion.title}</Flex>
+        <Flex ml={5} alignItems="center" >{suggesion.title}</Flex>
         </Flex>
         </Link>
 )

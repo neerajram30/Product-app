@@ -4,11 +4,11 @@ import store from '../store/store'
 function MyApp({ Component, pageProps }) {
   return (
     
-    <ChakraProvider>
       <Provider  store={store}>
+    <ChakraProvider>
       <Component {...pageProps} />
-    </Provider>
     </ChakraProvider>
+    </Provider>
   )
 }
 
